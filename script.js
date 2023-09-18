@@ -1,58 +1,82 @@
 
-function computerMove(){
+function computerMove() {
     const randomNumber = Math.floor(Math.random() * 3);
-    
+
     const choises = ["Rock", "Paper", "Scissors"];
     const compChoice = choises[randomNumber];
-    
+
     return compChoice;
 }
-let choicesDiv = document.getElementById('choices');
+let computerChoice = computerMove();
+
+const choicesDiv = document.getElementById('choices');
+
 let playerMove = '';
 let result = '';
+let moves = '';
 
 document.querySelector('.rock').addEventListener('click', playerMoveRock)
-function playerMoveRock(){
+function playerMoveRock() {
+    computerChoice = computerMove();
+    choicesDiv.innerHTML = '';
     playerMove = "Rock";
-    const computerChoice = computerMove();
-    if(computerChoice === "Paper"){
+    if (computerChoice === "Paper") {
         result = "Computer Wins!!!";
-    }else if(computerChoice === "Scissors"){
+    } else if (computerChoice === "Scissors") {
         result = "Player Wins!!!";
-    }else{
+    } else {
         result = "It's a Draw!!!";
     };
+    moves = `Player chooses ${playerMove}, Computer chooses ${computerChoice}`;
+    let newPElement = document.createElement('p');
+    let resultPElement = document.createElement('p');
+    newPElement.textContent = `${moves}`;
+    resultPElement.textContent = `${result}`
+    choicesDiv.appendChild(newPElement);
+    choicesDiv.appendChild(resultPElement);
 };
 
 document.querySelector('.paper').addEventListener('click', playerMovePaper)
-function playerMovePaper(){
+function playerMovePaper() {
+    computerChoice = computerMove();
+    choicesDiv.innerHTML = '';
     playerMove = "Paper";
-    const computerChoice = computerMove();
-    if(computerChoice === "Paper"){
+    
+    if (computerChoice === "Paper") {
         result = "It's a Draw!!!";
-    }else if(computerChoice === "Scissors"){
+    } else if (computerChoice === "Scissors") {
         result = "Computer Wins!!!";
-    }else{
+    } else {
         result = "Player Wins!!!";
     };
+    moves = `Player chooses ${playerMove}, Computer chooses ${computerChoice}`;
+    let newPElement = document.createElement('p');
+    let resultPElement = document.createElement('p')
+    newPElement.textContent = `${moves}`;
+    resultPElement.textContent = `${result}`
+    choicesDiv.appendChild(newPElement);
+    choicesDiv.appendChild(resultPElement);
 };
 
 document.querySelector('.scissors').addEventListener('click', playerMoveScissors)
-function playerMoveScissors(){
+function playerMoveScissors() {
+    computerChoice = computerMove();
+    choicesDiv.innerHTML = '';
     playerMove = "Scissors";
-    const computerChoice = computerMove();
-    if(computerChoice === "Paper"){
+    if (computerChoice === "Paper") {
         result = "Player Wins!!!";
-    }else if(computerChoice === "Scissors"){
+    } else if (computerChoice === "Scissors") {
         result = "It's a Draw!!!";
-    }else{
+    } else {
         result = "Computer Wins!!!";
     };
+    moves = `Player chooses ${playerMove}, Computer chooses ${computerChoice}`;
+    let newPElement = document.createElement('p');
+    let resultPElement = document.createElement('p');
+    newPElement.textContent = `${moves}`;
+    resultPElement.textContent = `${result}`
+    choicesDiv.appendChild(newPElement);
+    choicesDiv.appendChild(resultPElement);
 };
 
 
-
-
-// let newPElement = document.createElement('p');
-// newPElement.textContent = `Player chooses Rock, Computer chooses ${computerChoice}`;
-// choicesDiv.appendChild(newPElement)
