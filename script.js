@@ -1,4 +1,6 @@
-
+window.onload = () => {
+    alert('Welcome to the game :)')
+}
 function computerMove() {
     const randomNumber = Math.floor(Math.random() * 3);
 
@@ -103,6 +105,7 @@ function playerMoveScissors() {
     resultPElement.textContent = `${result}`
     choicesDiv.appendChild(newPElement);
     choicesDiv.appendChild(resultPElement);
+
     document.getElementById('player-score').textContent = `Player Score = ${playerScore}`;
     document.getElementById('computer-score').textContent = `Computer Score = ${computerScore}`;
     document.getElementById('draws-score').textContent = `Draws = ${draws}`
