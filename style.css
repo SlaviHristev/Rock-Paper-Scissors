@@ -1,6 +1,12 @@
 body
 {
-    background-color: rgb(2, 2, 17)
+    background-color:rgb(105, 17, 17)
+}
+h1
+{
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
 }
 p
 {
@@ -13,7 +19,18 @@ div
 text-align: center;
 margin-top: 50px;
 }
-button
-{
-margin: 10px;
+button{
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+}
+img{
+    width: 180px;
+    height: 180px;
+    padding: 0px;
+    border: 3px solid; 
+    border-radius: 100px;
+    mix-blend-mode: multiply;
+    filter: contrast(3);
+    
 }
