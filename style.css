@@ -19,11 +19,15 @@ div
 text-align: center;
 margin-top: 50px;
 }
+
 button{
     padding: 10px;
     border: none;
     background-color: transparent;
+    opacity: 1;
+    transition: 0.3s;
 }
+
 img{
     width: 180px;
     height: 180px;
@@ -33,4 +37,29 @@ img{
     mix-blend-mode: multiply;
     filter: contrast(3);
     
+}
+img:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+#scoreDiv
+{
+display: inline;
+}
+#player-score
+{
+padding-left: 20px;
+float: left;
+}
+#computer-score
+{
+margin-top: 0px;
+padding-right: 20px;;
+float: right;
+}
+#draws-score
+{
+    width: 90%;
+    padding-top: 20px;
+    margin: 0px;
 }
